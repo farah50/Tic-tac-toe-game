@@ -186,23 +186,3 @@ class Application(tk.Frame):
 root = tk.Tk()
 Application(master=root)
 root.mainloop()
-
-
-
-
-
-# {
-#     # IntelliSense を使用して利用可能な属性を学べます。
-#     // 既存の属性の説明をホバーして表示します。
-#     // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
-#     "version": "0.2.0",
-#     "configurations": [
-#         {
-#             "name": "Python: Current File",
-#             "type": "python",
-#             "request": "launch",
-#             "program": "${file}",
-#             "console": "integratedTerminal"
-#         }
-#     ]
-# }
