@@ -1,76 +1,5 @@
 # Tic tac toe in python
 
-
-import tkinter as tk
-import tkinter.font as font
-
-
-class Application(tk.Frame):
-
-    def __init__(self, master=None):
-        super().__init__(master)
-        master.title('Tic Tac Toe')
-        master.geometry('600x400')
-        self.master = master
-        self.pack(anchor=tk.W)
-        self.create_squares()
-
-    def create_squares(self):
-        labelFont = font.Font(size=30, weight='bold')
-        for i in range(0, 3):
-            for j in range(0, 3):
-                tblTxt = i * 3 + j
-                square = tk.Label(self, text=tblTxt, bg='white', bd=2,
-                                  font=labelFont, relief='groove', width=5, height=2)
-                square.grid(column=j, row=i)
-
-
-root = tk.Tk()
-Application(master=root)
-root.mainloop()
-
-
-
-
-import tkinter as tk
-import tkinter.font as font
-
-
-class Application(tk.Frame):
-
-    def __init__(self, master=None):
-        super().__init__(master)
-        master.title('Tic Tac Toe')
-        master.geometry('600x400')
-        self.master = master
-        self.pack(anchor=tk.W)
-        self.xIsNext = True
-        self.create_squares()
-
-    def create_squares(self):
-        labelFont = font.Font(size=30, weight='bold')
-        for i in range(0, 3):
-            for j in range(0, 3):
-                square = tk.Label(self, text='', bg='white', bd=2,
-                                  font=labelFont, relief='groove', width=5, height=2)
-                square.grid(column=j, row=i)
-                square.bind("<1>", self.btnClick)
-
-    def btnClick(self, event):
-        label = event.widget
-        if label['text'] == '':
-            label['text'] = 'X' if self.xIsNext else 'O'
-            self.xIsNext = False if self.xIsNext else True
-
-
-root = tk.Tk()
-Application(master=root)
-root.mainloop()
-
-
-
-
-
 import tkinter as tk
 import tkinter.font as font
 
@@ -122,7 +51,7 @@ class Application(tk.Frame):
         labelFont = font.Font(size=30, weight='bold')
         for i in range(0, 3):
             for j in range(0, 3):
-                square = tk.Label(self.lFrame, text='', bg='white', bd=2,
+                square = tk.Label(self.lFrame, text='', bg='pink', bd=2,
                                   font=labelFont, relief='groove', width=5, height=2)
                 square.grid(column=j, row=i)
                 square.bind("<1>", lambda e, args={'index': i * 3 + j}: self.sqClick(e, args))
